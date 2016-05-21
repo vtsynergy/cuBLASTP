@@ -1,0 +1,21 @@
+int swap(int x, int mask, int dir) 
+{ 
+	int y = __shfl_xor(x, mask); 
+	return x < y == dir ? y : x; 
+} 
+
+x = swap(x, 0x01, bfe(laneid, 1) ^ bfe(laneid, 0)); // 2 
+x = swap(x, 0x02, bfe(laneid, 2) ^ bfe(laneid, 1)); // 4 
+x = swap(x, 0x01, bfe(laneid, 2) ^ bfe(laneid, 0)); 
+x = swap(x, 0x04, bfe(laneid, 3) ^ bfe(laneid, 2)); // 8 
+x = swap(x, 0x02, bfe(laneid, 3) ^ bfe(laneid, 1)); 
+x = swap(x, 0x01, bfe(laneid, 3) ^ bfe(laneid, 0)); 
+x = swap(x, 0x08, bfe(laneid, 4) ^ bfe(laneid, 3)); // 16 
+x = swap(x, 0x04, bfe(laneid, 4) ^ bfe(laneid, 2)); 
+x = swap(x, 0x02, bfe(laneid, 4) ^ bfe(laneid, 1)); 
+x = swap(x, 0x01, bfe(laneid, 4) ^ bfe(laneid, 0)); 
+x = swap(x, 0x10, bfe(laneid, 4)); // 32 
+x = swap(x, 0x08, bfe(laneid, 3)); 
+x = swap(x, 0x04, bfe(laneid, 2)); 
+x = swap(x, 0x02, bfe(laneid, 1)); 
+x = swap(x, 0x01, bfe(laneid, 0));
