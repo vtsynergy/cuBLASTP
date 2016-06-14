@@ -6,7 +6,7 @@
 * Download and install Modern GPU library
 
 cuBLASTP uses segmented sort in Modern GPU library by NVlabs. In this version of
-cuBLASTP, we uses Modern GPU library version 1.1, which is available for
+cuBLASTP, we use Modern GPU library version 1.1, which is available for
 download at https://github.com/moderngpu/moderngpu/releases/tag/V1.1.
 
 * Build cuBLASTP
