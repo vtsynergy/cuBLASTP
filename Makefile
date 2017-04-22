@@ -2,7 +2,7 @@ INC=include
 SRC=src
 OBJ=obj
 
-MGPU_PATH=/home/zjing14/moderngpu-1.1/
+MGPU_PATH=/home/zhang/moderngpu-1.1/
 CUDA_PATH=/usr/local/cuda-6.0/
 
 CC=gcc -g

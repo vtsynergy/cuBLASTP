@@ -45,12 +45,10 @@ int4 main(int argc, char* argv[])
 	encoding_initialize(alphabetType);
 
 	// Initialize writing to formatted database
-    //writedb_initialize_stdout(filename, alphabetType);
     writedb_initialize(filename, alphabetType);
 
     // Open FASTA file for reading
-    //readFasta_open(filename);
-	readFasta_open_stdin(filename);
+    readFasta_open(filename);
 
 	printf("Formatting database...");
 	fflush(stdout);
@@ -134,7 +132,7 @@ uint4 determineDbAlphabetType(char* filename)
     uint4 sequenceLength;
 
     // Open FASTA file for reading
-	readFasta_open_stdin(filename);
+	readFasta_open(filename);
 
 	// Move through the FASTA file reading descriptions and sequences
 	while (readFasta_readSequence() && sequenceCount < 10)
